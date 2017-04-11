@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Welcome to Ionic!</h2>
+  <p>
+    This starter project comes with simple tabs-based layout for apps that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs, update any existing page or create new pages.
+  </p>
+
+  <ion-item>
+    <ion-icon name="logo-twitter" item-left></ion-icon>
+    Followers
+    <ion-badge item-right>260k</ion-badge>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="logo-twitter" item-left></ion-icon>
+    Followers
+    <ion-badge item-right [color]="color">260k</ion-badge>
+  </ion-item>
+
+
+  <h1>*ngFor</h1>
+  <ion-item *ngFor="let item of items">
+    <ion-icon name="logo-twitter" item-left></ion-icon>
+    Followers
+    <ion-badge item-right [color]="color">
+      {{item.name}}
+    </ion-badge>
+  </ion-item>
+
+  <h1>*ngIf</h1>
+  <ion-item>
+    <ion-icon name="logo-twitter" item-left></ion-icon>
+    Followers
+    <ion-badge *ngIf="color === 'primary'" item-right [color]="color">260k</ion-badge>
+  </ion-item>
+
+  <h1>Event Binding</h1>
+  <p>Click on the badge</p>
+  <ion-item>
+    <ion-icon name="logo-twitter" item-left></ion-icon>
+    Followers
+    <ion-badge (click)="alert()" item-right>260k</ion-badge>
+  </ion-item>
+
+  <h1>ngModel binding</h1>
+  <ion-item>
+    <ion-label floating>Enter one of our color names</ion-label>
+    <ion-input type="text" [(ngModel)]="colorProp"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="logo-twitter" item-left></ion-icon>
+    Followers
+    <ion-badge [color]="colorProp" item-right>260k</ion-badge>
+  </ion-item>
+</ion-content>
